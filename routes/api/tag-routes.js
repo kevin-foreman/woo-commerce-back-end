@@ -66,12 +66,16 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update({
-    individualHooks: true,
-    where (
-      id: req.params.id,
-    ),
-  })
+  Tag.update(
+    {
+      tag_name: req.body.tag_name,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
   .then(dbTagData => {
     if (!dbTagData) {
       res.status(404).json({ message: 'No tag exists with that id' });
@@ -95,7 +99,7 @@ router.delete('/:id', (req, res) => {
   .then(dbTagData => {
     if (!dbTagData) {
       res.status(404).json({ message: 'No tag exists with that id' });
-      return:
+      return;
     }
     res.json(dbTagData);
   })
