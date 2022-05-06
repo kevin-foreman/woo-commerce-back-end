@@ -18,7 +18,7 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
     through: ProductTag,
-    as: 'product_tag',
+    as: 'tagged_product',
     foreignKey: 'product_id',
     onDelete: 'SET NULL'
 });
@@ -26,13 +26,13 @@ Product.belongsToMany(Tag, {
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
     through: ProductTag,
-    as: 'product_tag',
-    foreignKey: 'product_id',
+    as: 'tagged_product',
+    foreignKey: 'tag_id',
     onDelete: 'SET NULL'
 });
 
 ProductTag.belongsTo(Product, {
-    foreignKey: 'product.id',
+    foreignKey: 'product-tag_id',
     onDelete: 'SET NULL'
 });
 
