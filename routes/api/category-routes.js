@@ -76,7 +76,7 @@ router.put('/:id', (req, res) => {
   })
   .then(dbCategoryData => {
     if (!dbCategoryData) {
-      res.status(400).json({ message: 'No category exists with that id' });
+      res.status(404).json({ message: 'No category exists with that id' });
       return;
     }
     res.json(dbCategoryData);
