@@ -32,10 +32,10 @@ router.get('/:id', (req, res) => {
     attributes: [
       'id',
       'category_name'
-    ]
+    ],
     include: [
       {
-        model: Product
+        model: Product,
         attributes: ['id', 'price', 'stock', 'category_id']
       },
     ],
