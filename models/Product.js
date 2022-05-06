@@ -27,7 +27,13 @@ Product.init(
         stock: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }
+        },
+        include: [
+            {
+                model: models.Category,
+                attributes: ['id']
+            }
+        ]
     },
     {
         sequelize,
