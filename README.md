@@ -34,7 +34,7 @@ kevin.o.foreman2@gmail.com // (GitHub) kevin-foreman
 
 ## License
 
-The license used for this project is MIT
+The license used for this project is AGPL v3
 
 Screenshot
 ![alt text](assets/images/back-end-tests-screenshot.png)
